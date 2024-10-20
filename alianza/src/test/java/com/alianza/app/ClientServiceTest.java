@@ -52,7 +52,7 @@ public class ClientServiceTest {
         clientEntity.setEndDate(null);
     }
 
-
+    @Test
     public void testFindAll() {
         // Datos de prueba
         ClientEntity clientEntity1 = new ClientEntity();
@@ -81,6 +81,7 @@ public class ClientServiceTest {
     }
 
 
+    @Test
     public void testFindBySharedKey() {
         // Datos de prueba
         String sharedKey = "testSharedKey";
@@ -102,6 +103,7 @@ public class ClientServiceTest {
     }
 
 
+    @Test
     public void testFindBySharedKey_NotFound() {
         // Datos de prueba
         String sharedKey = "nonExistentSharedKey";
@@ -117,6 +119,7 @@ public class ClientServiceTest {
     }
 
 
+    @Test
     public void testDeleteClientBySharedKey_ClientFound() {
         ClientEntity clientEntity = new ClientEntity();
         clientEntity.setSharedKey("santiago1");  // Asegúrate de que el sharedKey sea el mismo que pasas en el mock
@@ -136,7 +139,7 @@ public class ClientServiceTest {
         verify(clientRepository, times(1)).delete(clientEntity);
     }
 
-
+    @Test
     public void testDeleteClientBySharedKey_ClientNotFound() {
         // Configuramos el comportamiento del mock para que no encuentre el cliente
         when(clientRepository.findBySharedKey("nonExistentSharedKey")).thenReturn(Optional.empty());
