@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core'; // Importa MatNativeDateModule aquí
+import { MatNativeDateModule } from '@angular/material/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
         MatListModule,
         HttpClientModule,
         MatDatepickerModule,
-        MatNativeDateModule, // Asegúrate de que este módulo esté incluido para las pruebas
+        MatNativeDateModule,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();

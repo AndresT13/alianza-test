@@ -5,8 +5,6 @@ import { catchError, map } from 'rxjs/operators';
 import { Client } from '../model/Client';
 import { API_URLS } from '../shared/api-urls';
 
-// Configuración de headers
-
 @Injectable({
   providedIn: 'root',
 })

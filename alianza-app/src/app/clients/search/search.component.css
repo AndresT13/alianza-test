@@ -1,12 +1,12 @@
 .input-group {
-  max-width: 600px; /* Ancho máximo del input group */
-  width: 100%; /* Ocupar el 100% del ancho hasta el máximo especificado */
+  max-width: 600px;
+  width: 100%;
 }
 
 .d-flex {
-  height: auto; /* Eliminar altura completa */
-  justify-content: start; /* Alinear al inicio (izquierda) */
-  margin-top: 50px; /* Agregar margen superior si deseas espacio desde el top */
+  height: auto;
+  justify-content: start;
+  margin-top: 50px;
 }
 
 .btn-primary {
@@ -15,9 +15,9 @@
 }
 
 .btn-custom {
-  width: 400px; /* O el valor que necesites */
-  padding-left: 20px; /* Aumenta el espacio interno si es necesario */
-  padding-right: 20px; /* Ajusta el relleno para que el texto se vea centrado */
-  font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+  width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
   margin-bottom: 15px;
 }

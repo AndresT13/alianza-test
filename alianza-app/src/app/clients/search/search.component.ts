@@ -7,7 +7,7 @@ import { ClientService } from '../../Services/client.service';
   styleUrls: ['./search.component.css'],
 })
 export class ClientSearchComponent {
-  searchQuery: string = ''; // Para búsqueda rápida
+  searchQuery: string = '';
   isAdvancedSearch: boolean = false;
 
   filters = {
@@ -17,41 +17,37 @@ export class ClientSearchComponent {
     status: '',
   };
 
-  clients: any[] = []; // Lista de clientes que se va a mostrar en la tabla
+  clients: any[] = [];
 
   constructor(private clientService: ClientService) {}
 
-  // Toggle para activar/desactivar búsqueda avanzada
   toggleAdvancedSearch() {
     this.isAdvancedSearch = !this.isAdvancedSearch;
   }
 
-  // Lógica para búsqueda
-  onSearch() {
+  onSearch(): void {
     if (this.isAdvancedSearch) {
-      // Búsqueda avanzada
-      this.clientService.searchClients(this.filters).subscribe(
-        (data) => {
-          this.clients = data; // Asignamos los datos recibidos a la variable clients
+      this.clientService.searchClients(this.filters).subscribe({
+        next: (data) => {
+          this.clients = data;
           console.log('Advanced Search Results:', this.clients);
         },
-        (error) => {
-          console.error('Error during search:', error);
-        }
-      );
+        error: (error) => {
+          console.error('Error during advanced search:', error);
+        },
+      });
     } else {
-      // Búsqueda simple
       this.clientService
         .searchClients({ searchQuery: this.searchQuery })
-        .subscribe(
-          (data) => {
-            this.clients = data; // Asignamos los resultados a la variable clients
+        .subscribe({
+          next: (data) => {
+            this.clients = data;
             console.log('Search Results:', this.clients);
           },
-          (error) => {
+          error: (error) => {
             console.error('Error during search:', error);
-          }
-        );
+          },
+        });
     }
   }
 }

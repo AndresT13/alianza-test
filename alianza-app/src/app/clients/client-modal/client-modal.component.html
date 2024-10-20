@@ -2,25 +2,21 @@
 
 <form [formGroup]="form">
   <mat-dialog-content class="form-container">
-    <!-- Nombre -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Nombre</mat-label>
       <input matInput formControlName="name" placeholder="Nombre" required />
     </mat-form-field>
 
-    <!-- Teléfono -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Teléfono</mat-label>
       <input matInput formControlName="phone" placeholder="Teléfono" required />
     </mat-form-field>
 
-    <!-- Email -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Email</mat-label>
       <input matInput formControlName="email" placeholder="Email" required />
     </mat-form-field>
 
-    <!-- Fecha de Inicio -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Fecha de Inicio</mat-label>
       <input
@@ -37,7 +33,6 @@
       <mat-datepicker #startDatePicker></mat-datepicker>
     </mat-form-field>
 
-    <!-- Fecha de Fin -->
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Fecha de Fin</mat-label>
       <input
@@ -55,7 +50,6 @@
     </mat-form-field>
   </mat-dialog-content>
 
-  <!-- Botones -->
   <mat-dialog-actions class="dialog-actions">
     <button mat-button (click)="closeDialog()">Cerrar</button>
     <button mat-raised-button (click)="save()">OK</button>

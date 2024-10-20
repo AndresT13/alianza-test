@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
   templateUrl: './client-modal.component.html',
   styleUrls: ['./client-modal.component.css'],
   providers: [
-    { provide: DateAdapter, useClass: NativeDateAdapter }, // Proveedor del adaptador de fechas
+    { provide: DateAdapter, useClass: NativeDateAdapter },
     { provide: MAT_DATE_FORMATS, useValue: MAT_NATIVE_DATE_FORMATS },
   ],
 })
@@ -41,7 +41,6 @@ export class ClientModalComponent {
 
   submitForm() {
     if (this.form.valid) {
-      // Aquí puedes manejar los datos del formulario
       this.dialogRef.close(this.form.value);
     } else {
       console.log('Formulario inválido');
@@ -50,7 +49,6 @@ export class ClientModalComponent {
 
   save(): void {
     if (this.form.valid) {
-      // Mostramos la alerta de confirmación
       Swal.fire({
         title: '¿Estás seguro?',
         text: '¡Quieres guardar los cambios!',
@@ -62,34 +60,30 @@ export class ClientModalComponent {
         cancelButtonText: 'Cancelar',
       }).then((result) => {
         if (result.isConfirmed) {
-          // Si el usuario confirma, obtenemos los valores del formulario
           const clientData: Client = this.form.value;
 
-          // Llamamos al servicio para guardar los datos
-          this.clientService.createClient(clientData).subscribe(
-            (response) => {
+          this.clientService.createClient(clientData).subscribe({
+            next: (response) => {
               Swal.fire(
                 'Guardado!',
                 'Los datos se han guardado correctamente.',
                 'success'
               );
 
-              // Emitimos el cliente guardado al componente principal para que actualice la lista
-              this.clientSaved.emit(response); // Asegúrate de que la respuesta contenga todos los datos correctos
-              this.dialogRef.close(response); // Cerramos el modal y pasamos la respuesta
+              this.clientSaved.emit(response);
+              this.dialogRef.close(response);
             },
-            (error) => {
+            error: (error) => {
               Swal.fire(
                 'Error',
                 'Hubo un problema al guardar los datos.',
                 'error'
               );
-            }
-          );
+            },
+          });
         }
       });
     } else {
-      // Si el formulario no es válido, marcar todos los campos como "tocados" para mostrar los errores
       this.form.markAllAsTouched();
     }
   }

@@ -21,29 +21,27 @@
 }
 
 .icon-link a {
-  text-decoration: none; /* Elimina el subrayado del enlace */
-  color: #0288d1 !important; /* Color azul más oscuro para el texto */
+  text-decoration: none;
+  color: #0288d1 !important;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  justify-content: flex-start;
 }
 
-/* Estilos para el ícono */
 ::ng-deep .icon-link mat-icon {
   margin-right: 8px;
-  color: #0288d1; /* Azul más oscuro para íconos */
-  font-size: 36px; /* Aumenta el tamaño del ícono */
+  color: #0288d1;
+  font-size: 36px;
 }
 
-/* Hover para el texto y el ícono */
 .icon-link a:hover {
-  color: #01579b; /* Cambia el color al pasar el mouse sobre el enlace */
+  color: #01579b;
 }
 
 .icon-link mat-icon:hover {
-  color: #01579b; /* Cambia el color del ícono al pasar el mouse */
+  color: #01579b;
 }
 
 .blue-text {
-  color: #0288d1; /* Azul más oscuro */
+  color: #0288d1;
 }

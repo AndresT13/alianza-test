@@ -5,7 +5,7 @@
 mat-dialog-content {
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Espacio entre los campos del formulario */
+  gap: 16px;
   padding: 20px;
 }
 
@@ -31,9 +31,9 @@ button {
 }
 
 .dialog-actions button:nth-child(1) {
-  margin-left: auto; /* Cierra el botón de "Cerrar" en la parte superior */
+  margin-left: auto;
 }
 
 .dialog-actions button:nth-child(2) {
-  margin-right: auto; /* Alinea el botón "OK" a la derecha en la parte inferior */
+  margin-right: auto;
 }

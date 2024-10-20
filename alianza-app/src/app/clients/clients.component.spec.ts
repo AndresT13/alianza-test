@@ -15,8 +15,8 @@ import {
 } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MomentDateAdapter } from '@angular/material-moment-adapter'; // Asegúrate de importar este
-import * as moment from 'moment'; // Necesario para los adaptadores de momento
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import * as moment from 'moment';
 
 const MY_DATE_FORMATS = {
   parse: {
@@ -43,7 +43,7 @@ describe('ClientsComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatDatepickerModule,
-        MatNativeDateModule, // Si prefieres NativeDateAdapter, mantén esto
+        MatNativeDateModule,
         MatTableModule,
         MatPaginatorModule,
         MatSortModule,
@@ -52,8 +52,8 @@ describe('ClientsComponent', () => {
       ],
       providers: [
         { provide: MatDialogRef, useValue: {} },
-        { provide: DateAdapter, useClass: MomentDateAdapter }, // Proporciona el adaptador de fecha
-        { provide: MY_DATE_FORMATS, useValue: MY_DATE_FORMATS }, // Usa MY_DATE_FORMATS en lugar de MAT_DATE_FORMATS
+        { provide: DateAdapter, useClass: MomentDateAdapter },
+        { provide: MY_DATE_FORMATS, useValue: MY_DATE_FORMATS },
         provideHttpClient(withInterceptorsFromDi()),
       ],
     }).compileComponents();

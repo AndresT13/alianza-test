@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core'; // Asegúrate de que este módulo esté importado
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -56,17 +56,17 @@ const MY_DATE_FORMATS = {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSidenavModule, // Ya está importado
+    MatSidenavModule,
     MatListModule,
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule, // Importa también este módulo para evitar problemas con la fecha
+    MatNativeDateModule,
     ReactiveFormsModule,
-    AppRoutingModule, // Asegúrate de que esté correctamente importado
-    MatIconModule, // Importa el módulo para que `mat-icon` funcione
+    AppRoutingModule,
+    MatIconModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,

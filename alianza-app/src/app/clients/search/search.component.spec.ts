@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule para usar ngModel
+import { FormsModule } from '@angular/forms';
 import { ClientSearchComponent } from './search.component';
 
 describe('SearchComponent', () => {
@@ -9,7 +9,7 @@ describe('SearchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ClientSearchComponent],
-      imports: [FormsModule], // Asegúrate de importar FormsModule aquí
+      imports: [FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ClientSearchComponent);

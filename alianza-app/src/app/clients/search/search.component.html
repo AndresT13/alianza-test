@@ -1,6 +1,5 @@
 <div class="container">
   <div class="row">
-    <!-- Columna para búsqueda rápida -->
     <div class="col-md-6 d-flex justify-content-start align-items-center mb-3">
       <div class="input-group mb-3">
         <input
@@ -21,7 +20,6 @@
         </div>
       </div>
 
-      <!-- Advanced Search Button -->
       <button class="btn btn-primary btn-custom ml-3">Advanced Search</button>
     </div>
 
@@ -53,9 +51,7 @@
     </div>
   </div>
 
-  <!-- Tabla de resultados (mitad de pantalla) -->
   <div class="col-md-6" *ngIf="clients.length > 0">
-    <!-- Solo muestra la tabla si hay resultados -->
     <table class="table table-bordered">
       <thead>
         <tr>

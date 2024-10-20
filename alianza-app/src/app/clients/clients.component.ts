@@ -55,7 +55,6 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Es importante asignar el paginator y el sort después de que la vista se haya inicializado
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
@@ -65,7 +64,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
       next: (data: any) => {
         console.log('Clientes recibidos:', data);
         this.dataSource.data = data.object;
-        this.actualizarPaginatorYSort(); // Asegúrate de reasignar el paginator y sort
+        this.actualizarPaginatorYSort();
       },
       error: (error) => {
         console.error('Error al obtener los clientes:', error);
@@ -74,7 +73,6 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   }
 
   actualizarPaginatorYSort(): void {
-    // Reasigna el paginator y sort cada vez que cambian los datos
     if (this.paginator) {
       this.dataSource.paginator = this.paginator;
     }
@@ -91,9 +89,9 @@ export class ClientsComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe((result: Client) => {
       if (result) {
         console.log('Nuevo cliente guardado:', result);
-        // Actualizar el dataSource con el nuevo cliente
+
         this.dataSource.data = [...this.dataSource.data, result];
-        this.actualizarPaginatorYSort(); // Reasignar paginator y sort
+        this.actualizarPaginatorYSort();
       } else {
         console.log('Modal cerrado sin datos');
       }
@@ -119,7 +117,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
               `El cliente ${cliente.name} ha sido eliminado.`,
               'success'
             );
-            // Actualizamos la lista de clientes después de eliminar el cliente
+
             this.obtenerClientes();
           },
           error: (error) => {
