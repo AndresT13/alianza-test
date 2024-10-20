@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <!-- Columna para búsqueda rápida -->
+    <div class="col-md-6 d-flex justify-content-start align-items-center mb-3">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="searchQuery"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary me-3"
+            type="button"
+            (click)="onSearch()"
+          >
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+
+      <!-- Advanced Search Button -->
+      <button class="btn btn-primary btn-custom ml-3">Advanced Search</button>
+    </div>
+
+    <div *ngIf="isAdvancedSearch" class="mb-3">
+      <label>Client Type</label>
+      <select class="form-control" [(ngModel)]="filters.clientType">
+        <option value="">All</option>
+        <option value="individual">Individual</option>
+        <option value="corporate">Corporate</option>
+      </select>
+
+      <label class="mt-2">Date Range</label>
+      <div class="d-flex">
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="filters.startDate"
+        />
+        <span class="mx-2">to</span>
+        <input type="date" class="form-control" [(ngModel)]="filters.endDate" />
+      </div>
+
+      <label class="mt-2">Status</label>
+      <select class="form-control" [(ngModel)]="filters.status">
+        <option value="">All</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tabla de resultados (mitad de pantalla) -->
+  <div class="col-md-6" *ngIf="clients.length > 0">
+    <!-- Solo muestra la tabla si hay resultados -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <td>{{ client.fullName }}</td>
+          <td>{{ client.phone }}</td>
+          <td>{{ client.email }}</td>
+          <td>{{ client.startDate | date : "shortDate" }}</td>
+          <td>{{ client.endDate | date : "shortDate" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

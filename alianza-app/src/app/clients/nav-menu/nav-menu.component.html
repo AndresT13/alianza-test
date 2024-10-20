@@ -1,0 +1,48 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <img class="image-logo" src="../../assets/images/Alianza2.png" alt="" />
+      <br />
+      <br />
+
+      <div class="icon-link">
+        <a
+          mat-list-item
+          routerLink="/clients"
+          routerLinkActive="active"
+          class="icon-color"
+        >
+          <mat-icon class="icon-color">person</mat-icon>
+          <span class="blue-text">Clients</span>
+        </a>
+      </div>
+
+      <a mat-list-item routerLink="#" routerLinkActive="disabled"
+        >Client look history</a
+      >
+      <a
+        mat-list-item
+        routerLink="/clients"
+        routerLinkActive="disabled"
+        class="margin-menu-link"
+        >Emergency PIN</a
+      >
+      <a mat-list-item routerLink="/clients" routerLinkActive="disabled"
+        >configuration</a
+      >
+      <a
+        mat-list-item
+        routerLink="/about"
+        routerLinkActive="disabled"
+        class="margin-menu-link"
+        >Emergency PIN</a
+      >
+      <a mat-list-item routerLink="/about" routerLinkActive="disabled"
+        >history</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

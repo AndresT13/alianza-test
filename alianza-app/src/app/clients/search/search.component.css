@@ -1,0 +1,23 @@
+.input-group {
+  max-width: 600px; /* Ancho máximo del input group */
+  width: 100%; /* Ocupar el 100% del ancho hasta el máximo especificado */
+}
+
+.d-flex {
+  height: auto; /* Eliminar altura completa */
+  justify-content: start; /* Alinear al inicio (izquierda) */
+  margin-top: 50px; /* Agregar margen superior si deseas espacio desde el top */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-custom {
+  width: 400px; /* O el valor que necesites */
+  padding-left: 20px; /* Aumenta el espacio interno si es necesario */
+  padding-right: 20px; /* Ajusta el relleno para que el texto se vea centrado */
+  font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+  margin-bottom: 15px;
+}

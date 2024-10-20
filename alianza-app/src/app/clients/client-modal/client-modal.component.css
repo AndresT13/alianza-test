@@ -1,0 +1,39 @@
+.full-width {
+  width: 100%;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre los campos del formulario */
+  padding: 20px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.dialog-actions button {
+  margin: 0;
+}
+
+.dialog-actions button:nth-child(1) {
+  margin-left: auto; /* Cierra el botón de "Cerrar" en la parte superior */
+}
+
+.dialog-actions button:nth-child(2) {
+  margin-right: auto; /* Alinea el botón "OK" a la derecha en la parte inferior */
+}

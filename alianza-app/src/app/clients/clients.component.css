@@ -1,0 +1,91 @@
+/* Contenedor de la tabla, ocupa el 100% de alto y ancho de la ventana */
+.full-screen-table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa la altura completa de la ventana */
+  width: 100vw; /* Ocupa el ancho completo de la ventana */
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.align-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.margen-superior {
+  margin-top: 50px; /* Puedes ajustar el valor según lo necesites */
+}
+
+/* La tabla ocupa todo el espacio disponible dentro del contenedor */
+.full-screen-table {
+  flex-grow: 1; /* Hace que la tabla ocupe el espacio disponible */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  overflow: auto; /* Si el contenido excede, habilita el scroll */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Paginador alineado en la parte inferior */
+.full-screen-paginator {
+  flex-shrink: 0; /* Evita que el paginador se reduzca */
+  margin-top: auto; /* Empuja el paginador hacia abajo */
+  width: 100%;
+}
+
+/* Agrupación de botones alineados a la derecha */
+.button-group {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center; /* Alinea los elementos verticalmente */
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Estilos para el botón */
+.mat-button.mat-light-blue {
+  background-color: #03a9f4;
+  color: #ffffff;
+}
+
+/* Alineación de contenido en la tabla */
+.align-content {
+  justify-content: flex-end;
+  margin-left: 50px;
+  margin-top: 150px;
+}
+
+/* Márgenes para los botones */
+.margin-button {
+  margin: 0 15px;
+}
+
+/* Estilo para el color del ícono */
+.color-icon {
+  color: beige;
+}
+
+/* Estilo de color del texto y los íconos */
+.font-color {
+  color: #03a9f4;
+
+  margin-top: 100px;
+  text-align: left;
+}
+
+.centered-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.centered-icon mat-icon {
+  color: #0288d1;
+  position: absolute;
+  left: 10%; /* Mueve el ícono un 20% antes del centro */
+  font-size: 27px;
+}

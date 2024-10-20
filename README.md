@@ -1,2 +1,0 @@
-# alianza-test
-Test Alianza

@@ -1,0 +1,49 @@
+.example-container {
+  height: 100vh;
+}
+
+.mat-nav-list .mat-list-item.active {
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.image-logo {
+  width: 150px;
+  margin-right: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.margin-menu-link {
+  margin-top: 3px;
+  margin-bottom: -30px;
+}
+
+.icon-link a {
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: #0288d1 !important; /* Color azul más oscuro para el texto */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+/* Estilos para el ícono */
+::ng-deep .icon-link mat-icon {
+  margin-right: 8px;
+  color: #0288d1; /* Azul más oscuro para íconos */
+  font-size: 36px; /* Aumenta el tamaño del ícono */
+}
+
+/* Hover para el texto y el ícono */
+.icon-link a:hover {
+  color: #01579b; /* Cambia el color al pasar el mouse sobre el enlace */
+}
+
+.icon-link mat-icon:hover {
+  color: #01579b; /* Cambia el color del ícono al pasar el mouse */
+}
+
+.blue-text {
+  color: #0288d1; /* Azul más oscuro */
+}
